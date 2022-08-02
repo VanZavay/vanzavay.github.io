@@ -14,15 +14,16 @@ myImage.onclick = function(){
 var myButton = document.querySelector('button');
 var myHeading = document.querySelector ('h1');
 function setUserName(){
-    var myName = prompt('Кто ты воин?');
+    var myName = prompt('Кто ты, воин?', 'неизвестный');
     localStorage.setItem('name',myName);
-    myHeading.textContent = 'Приветствую тебя,'+ myName + '!';
+    myHeading.textContent = 'Приветствую тебя, '+ myName + '!';
     if(!localStorage.getItem('name')){
         setUserName();
     }else{
         var storedName = localStoragr.getItem('name');
         myHeading.textContent = 'Ну здравствуй, ' + storedName;
     }
+
 }
 myButton.onclick = function(){
     setUserName();
